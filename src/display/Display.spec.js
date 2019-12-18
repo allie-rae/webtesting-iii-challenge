@@ -11,7 +11,7 @@ test("Display renders without crashing", () => {
 })
 
 
-test("Displays Open / Unlocked", () => {
+test("Displays Open & Unlocked", () => {
     const display = render(<Display closed={false} locked={false} />);
 
     expect(display.getByTestId('lockedDisplay')).toBeInTheDocument();
@@ -19,17 +19,24 @@ test("Displays Open / Unlocked", () => {
 
 })
 
-test("Displays locked & unlocked / red & green Classes", () => {
+test("Displays Closed & Locked", () => {
+    const display = render(<Display closed={true} locked={true} />);
+
+    expect(display.getByTestId('lockedDisplay')).toBeInTheDocument();
+    expect(display.getByTestId('closedDisplay')).toBeInTheDocument();
+
+})
+
+test("Displays unlocked & green Classes", () => {
     const display = render(<Display closed={false} locked={false} />);
-
     const lockedDisplay = display.getByText(/unlocked/i);
-
     lockedDisplay.classList.contains('green-led') && expect(lockedDisplay.textContent).toMatch(/unlocked/i);
-    lockedDisplay.classList.contains('red-led') && expect(lockedDisplay.textContent).toMatch(/locked/i);
 })
 
 test("Displays locked and red class", () => {
     const display = render(<Display closed={true} locked={true} />);
+
+    const closedDisplay = display.getByText(/closed/i)
 
     expect(display.getByText(/locked/i));
     expect(closedDisplay.classList.contains('red-led'));
