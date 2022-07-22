@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Display Snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="display panel"
+  >
+    <div
+      class="led green-led"
+      data-testid="lockedDisplay"
+    >
+      Unlocked
+    </div>
+    <div
+      class="led green-led"
+      data-testid="closedDisplay"
+    >
+      Open
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Display renders without crashing 1`] = `
+<DocumentFragment>
+  <div
+    class="display panel"
+  >
+    <div
+      class="led green-led"
+      data-testid="lockedDisplay"
+    >
+      Unlocked
+    </div>
+    <div
+      class="led green-led"
+      data-testid="closedDisplay"
+    >
+      Open
+    </div>
+  </div>
+</DocumentFragment>
+`;
